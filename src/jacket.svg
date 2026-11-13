@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 640">
+  <defs>
+    <linearGradient id="hide" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#3a3a3a"/>
+      <stop offset="0.5" stop-color="#1c1c1c"/>
+      <stop offset="1" stop-color="#0c0c0c"/>
+    </linearGradient>
+    <filter id="leather" x="0" y="0" width="100%" height="100%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.7" numOctaves="2" seed="7" result="noise"/>
+      <feDiffuseLighting in="noise" surfaceScale="1.5" lighting-color="#fff" result="light">
+        <feDistantLight azimuth="235" elevation="60"/>
+      </feDiffuseLighting>
+      <feComposite in="light" in2="SourceGraphic" operator="arithmetic" k1="0.8" k3="0.35"/>
+    </filter>
+    <g id="half">
+      <path fill="url(#hide)" d="M150 112 L240 66 L245 76 L205 625 L150 625 L162 300 C165 220 158 160 150 112 Z"/>
+      <path fill="#0d0d0d" d="M151 596 L208 599 L205 625 L150 625 Z"/>
+      <path fill="url(#hide)" d="M150 112 C105 122 86 165 82 240 L60 560 Q98 578 140 572 L162 300 Z"/>
+      <path fill="#0d0d0d" d="M62 540 Q100 556 141 552 L140 572 Q98 578 60 560 Z"/>
+      <path fill="#141414" stroke="#2c2c2c" stroke-width="2" d="M244 52 L188 104 L232 205 L242 80 Z"/>
+      <path fill="none" stroke="#000" stroke-width="3" d="M150 112 Q166 200 162 300"/>
+      <path fill="none" stroke="#999" stroke-width="3" stroke-dasharray="2 3" d="M243 82 L207 620"/>
+      <path fill="none" stroke="#888" stroke-width="3" d="M172 440 L206 385"/>
+      <rect x="203" y="380" width="7" height="14" rx="2" fill="#bbb" transform="rotate(32 206 387)"/>
+      <g fill="none" stroke="#000" stroke-width="2" stroke-linecap="round" opacity="0.6">
+        <path d="M84 330 q14 -8 26 2"/>
+        <path d="M80 360 q16 -6 30 4"/>
+      </g>
+      <g fill="none" stroke="#fff" stroke-linecap="round" opacity="0.14">
+        <path stroke-width="7" d="M104 180 Q94 350 82 520"/>
+        <path stroke-width="5" d="M178 150 Q192 220 184 300"/>
+      </g>
+    </g>
+  </defs>
+  <g filter="url(#leather)">
+    <path fill="#0a0a0a" d="M232 72 Q300 26 368 72 Q300 112 232 72 Z"/>
+    <path fill="#161616" d="M232 72 L252 70 Q300 106 348 70 L368 72 L396 624 L204 624 Z"/>
+    <path fill="none" stroke="#242424" stroke-width="8" d="M252 70 Q300 106 348 70"/>
+    <use href="#half"/>
+    <use href="#half" transform="matrix(-1 0 0 1 600 0)"/>
+  </g>
+</svg>

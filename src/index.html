@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>The Jensen Affairs: {{COUNT}}</title>
+  <meta name="description" content="The Jensen Affairs: {{COUNT}}">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://jensenaffairs.fyi/">
+  <meta property="og:title" content="The Jensen Affairs: {{COUNT}}">
+  <meta property="og:image" content="https://jensenaffairs.fyi/og.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="A leather jacket with the number {{COUNT}} on the T-shirt underneath">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="theme-color" content="#76b900">
+  <link rel="icon" href="favicon.png" sizes="32x32">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="alternate" type="application/json" href="index.json">
+  <style>
+    :root {
+      --green: #76b900;
+      --heavy: "Arial Black", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; height: 100%; }
+    body {
+      display: flex;
+      flex-direction: column;
+      min-height: 100svh;
+      background:
+        radial-gradient(circle at 50% 55%, rgb(118 185 0 / 0.22), transparent 60%),
+        repeating-linear-gradient(135deg, transparent 0 22px, rgb(255 255 255 / 0.025) 22px 23px),
+        #000;
+      border-left: 10px solid var(--green);
+      color: #fff;
+      font-family: var(--heavy);
+    }
+    main {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem 1rem 0;
+    }
+    .label {
+      margin: 0;
+      text-align: center;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      font-size: clamp(1.3rem, 5vw, 2.4rem);
+    }
+    .jacket {
+      display: grid;
+      container-type: inline-size;
+      width: min(90vw, 600px, (100svh - 13rem) * 600 / 640);
+      animation: swagger 6s ease-in-out infinite;
+      transform-origin: 50% 0;
+    }
+    .jacket > * { grid-area: 1 / 1; }
+    .jacket img { width: 100%; height: auto; }
+    .count {
+      justify-self: center;
+      margin: 30cqw 0 0;
+      font-size: 42cqw;
+      line-height: 1;
+      color: var(--green);
+      text-shadow: 0 0 0.12em rgb(118 185 0 / 0.7);
+    }
+    footer {
+      padding: 1.5rem 1rem;
+      text-align: center;
+      color: #666;
+      font: 0.85rem/1.4 ui-monospace, Menlo, monospace;
+    }
+    footer a { color: var(--green); }
+    @keyframes swagger {
+      50% { transform: rotate(1.5deg); }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .jacket { animation: none; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <p class="label">The Jensen Affairs</p>
+    <div class="jacket">
+      <img src="jacket.svg" alt="">
+      <h1 class="count">{{COUNT}}</h1>
+    </div>
+  </main>
+  <footer>
+    <a href="index.json">index.json</a>
+  </footer>
+</body>
+</html>
